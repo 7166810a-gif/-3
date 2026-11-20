@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "מנהל מדיה אישי",
+  "version": "1.0.0",
+  "description": "הודעה בדפי YouTube וכלי להורדת קובצי מדיה ישירים שמותר לך להוריד.",
+  "permissions": [
+    "storage",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "optional_host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "מנהל מדיה אישי"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/watch*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
