@@ -108,18 +108,20 @@ async function startDownload(event) {
   downloadButton.textContent = "בודק קישור…";
 
   try {
-    const detected = await detectMediaType(url, extension);
-    const actualType = detected.type;
-    const finalExtension = extension || detected.extension;
-    if (!actualType || actualType !== selectedType) {
-      throw new Error("סוג הקובץ בקישור אינו תואם לבחירה שלך.");
-    }
-
+    // Request optional host access immediately from the submit gesture,
+    // before any asynchronous work, as required by Chrome permissions.
     const permissionGranted = await new Promise((resolve) => {
       chrome.permissions.request({ origins: [url.origin + "/*"] }, resolve);
     });
     if (!permissionGranted) {
       throw new Error("נדרשת הרשאת גישה לאתר שממנו מורידים את הקובץ.");
+    }
+
+    const detected = await detectMediaType(url, extension);
+    const actualType = detected.type;
+    const finalExtension = extension || detected.extension;
+    if (!actualType || actualType !== selectedType) {
+      throw new Error("סוג הקובץ בקישור אינו תואם לבחירה שלך.");
     }
 
     const settings = await chrome.storage.local.get({ downloadFolder: "MediaHelper", saveAs: false });
