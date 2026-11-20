@@ -1,0 +1,17 @@
+:root { font-family: Arial, sans-serif; color: #172033; background: #f4f6fa; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 32px 18px; }
+.page { max-width: 660px; margin: 0 auto; background: white; border: 1px solid #e0e6ef; border-radius: 16px; padding: 28px; box-shadow: 0 8px 30px rgba(20,35,60,.06); }
+h1 { margin: 0 0 8px; font-size: 25px; }
+.intro { margin: 0 0 25px; color: #667085; line-height: 1.6; }
+.setting { margin: 20px 0; }
+.setting > label { display: block; font-weight: 700; margin-bottom: 8px; }
+input[type="text"] { width: 100%; padding: 11px 12px; border: 1px solid #cbd5e1; border-radius: 9px; font: inherit; direction: ltr; text-align: left; }
+.hint { color: #667085; font-size: 13px; line-height: 1.6; margin: 7px 0 0; }
+.checkbox-setting { display: flex; gap: 10px; align-items: center; }
+.checkbox-setting input { width: 17px; height: 17px; margin: 0; }
+.checkbox-setting label { font-weight: 400; margin: 0; }
+button { border: 0; border-radius: 9px; padding: 12px 20px; background: #1d4ed8; color: white; font: bold 14px Arial, sans-serif; cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 3px solid #bfdbfe; outline-offset: 2px; }
+#status { min-height: 22px; color: #166534; }
+.info { background: #eef3fa; color: #46556b; border-radius: 10px; padding: 13px; line-height: 1.65; font-size: 13px; margin-top: 22px; }
