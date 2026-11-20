@@ -26,3 +26,8 @@ input:focus, select:focus, button:focus-visible, a:focus-visible { outline: 3px 
 footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 11px; color: #657084; }
 a { color: #1d4ed8; text-decoration: none; }
 a:hover { text-decoration: underline; }
+.official-panel { margin: 14px 0; padding: 12px; border: 1px solid #cbdcf8; border-radius: 10px; background: #f2f6ff; }
+.official-panel h2 { margin: 0 0 6px; font-size: 14px; }
+.official-panel p { margin: 0 0 10px; color: #46556b; font-size: 11px; line-height: 1.55; }
+.official-link { display: block; text-align: center; background: #1d4ed8; color: #fff; border-radius: 8px; padding: 9px; font-size: 12px; font-weight: 700; }
+.takeout-link { display: block; margin-top: 8px; text-align: center; font-size: 11px; color: #1d4ed8; }
